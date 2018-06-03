@@ -135,5 +135,5 @@ function permute($b,&$h)
 		for ($i-= 1; $i > - 1; $i--) $a[$z++] = $c[$i];
 		}
 }
-echo $h;
+print $h;
 ?>
