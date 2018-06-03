@@ -14,8 +14,10 @@ $a = array(
 	6,
 	7
 );
+
 $k = 5; /*Set a value. Ваше значение.*/
 $n = 7; /*Set a value. Ваше значение.*/
+
 /*We cut it for two arrays:
 * in B - elements with element on a position K and
 * in C the tail of elements.
@@ -24,6 +26,7 @@ $n = 7; /*Set a value. Ваше значение.*/
 * С хранит остальные*/
 $c = array_splice($a, $k);
 $b = array_splice($a, 0, $k);
+
 /*Print first. Печтаем первое вне циклов (поэтому почти эвристика)*/
 permute($b,$h);
 
@@ -93,6 +96,7 @@ while (1)
 /*Функция перестановок. Permutations function.*/
 function permute($b,&$h)
 	{
+	
 	/*Дублируем массив и перевернем его. Это нужно для выхода
 	 * из алгоритма.
 	 * Here we make a copy and reverse our array. It is necessary to
