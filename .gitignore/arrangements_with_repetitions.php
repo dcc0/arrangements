@@ -1,7 +1,7 @@
 <?php
 /*Размещения с повторениями. Arrangements with repetitions*/
 /*Переменная считает число объектов.
- * This variable counts the number of objects. /
+ * This variable counts the number of objects.*/
 $h=0;
 
 /*Our arrays. Массив*/
