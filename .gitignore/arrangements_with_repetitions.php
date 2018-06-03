@@ -17,31 +17,37 @@ permute($b,$h);
 /*Combinations with repetitions. Сочетания с повторениями.*/
 while (1)
 	{
+	
 	/*Here we search an element in array C greater than K in array B.
 	* Ищем элемент в массиве С, больше на единицу, чем
 	* элемент в B на позиции K*/
 		if (array_search($b[$k-1]+1,$c)!==false )
 		{
+			
 		/*Found. Here we increase element per 1.
 		* Нашли. Увеличиваем на единицу.*/
 		$b[$k-1] = $b[$k-1] + 1;
 		permute($b,$h);
 		}
+	
 	/*Если последний элемент в массива B равен n
 	* - старшему значению, то цикл поиска элемента слева от К,
 	* для которого в массиве C есть больший на единицу.*/
 	if ($b[$k - 1] == $n)
 		{
 		$i = $k - 1;
+		
 		/*Просмотр массива справа налево.
 		* Looking greater element (from right to left).*/
 		while ($i >= 0)
 			{
+			
 			/*Если дошли до 0 индекса и таких элементов нет,
 			* то алгоритм завершается.
 			* Index 0 and we didn't find the element.
 			* This condition stops the algorithm.*/
 			if ($i == 0 && $b[$i] == $n ) break 2;
+			
 			/*Поиск элемента для увеличения.
 			* Looking for an element to increase it.*/
 			$more_per_unit = array_search($b[$i] + 1, $c);
@@ -49,6 +55,7 @@ while (1)
 				{
 				$c[$more_per_unit] = $c[$more_per_unit] - 1;
 				$b[$i] = $b[$i] + 1;
+				
 				/*Перенос значений в С. Заполнение  массива B до K*.
 				*Here we transport elements to C and fill array B till K.*/
 				for  ($j=$i; $j < $k-1; $j++) {
@@ -56,10 +63,12 @@ while (1)
 				$b[$j+1]=$b[$i];
 
 				}
+				
 				/*Удаление повторяющихся значений из C.*
 				* Here we remove duplicates out of C.*/
 				$c = array_diff($c, $b);
 				permute($b,$h);
+				
 				/*Here we add n to the array C.
 				 * Добавим n в массив С*/
 				array_unshift ($c, $n);
@@ -74,6 +83,7 @@ while (1)
 /*Функция перестановок. Permutations function.*/
 function permute($b,&$h)
 	{
+	
 	/*Дублируем массив и перевернем его. Это нужно для выхода
 	 * из алгоритма.
 	 * Here we make a copy and reverse our array. It is necessary to
@@ -101,6 +111,7 @@ function permute($b,&$h)
 			{
 			$j++;
 			}
+		
 		/*Обмен. Here we change.*/
 		$c = $a[$j];
 		$a[$j] = $a[$i];
@@ -112,5 +123,5 @@ function permute($b,&$h)
 		for ($i-= 1; $i > - 1; $i--) $a[$z++] = $c[$i];
 		}
 }
-echo $h;
+print $h;
 ?>
