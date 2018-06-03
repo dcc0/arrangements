@@ -17,6 +17,7 @@ $a = array(
 
 $k = 5; /*Set a value. Ваше значение.*/
 $n = 7; /*Set a value. Ваше значение.*/
+
 /*We cut it for two arrays:
 * in B - elements with element on a position K and
 * in C the tail of elements.
@@ -62,6 +63,7 @@ while (1)
 			* Index 0 and we didn't find the element.
 			* This condition stops the algorithm.*/
 			if ($i == 0 && $b[$i] == $n - $k + 1) break 2;
+			
 			/*Поиск элемента для увеличения.
 			* Looking for an element to increase it.*/
 			$more_per_unit = array_search($b[$i] + 1, $c);
