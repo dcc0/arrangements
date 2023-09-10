@@ -1,5 +1,5 @@
 <?php
-/*Размещения без повторений. Arrangements with repetitions*/
+/*Размещения без повторений. Arrangements without repetitions*/
 /*Переменная считает число объектов.
  * This variable counts the number of objects. */
 $h=0;
